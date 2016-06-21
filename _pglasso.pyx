@@ -36,7 +36,7 @@ cdef class DoubleMsg:
 @cython.profile(False)
 cdef inline bint is_sorted(long[:] arr):
     # enable this function wheen debugging
-    return True 
+    return True
     cdef int i
     for i in xrange(arr.shape[0] - 1):
         if arr[i] > arr[i+1]:

@@ -1,1 +1,4 @@
-This a package that implements Pathway Graphical Glasso algorithm
+This a package that implements Pathway Graphical Glasso algorithm.
+
+See the following paper for description: 
+Pathway Graphical Lasso, AAAI 2015, Maxim Grechkin, Maryam Fazel, Daniela Witten, Su-In Lee
