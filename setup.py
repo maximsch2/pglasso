@@ -14,13 +14,14 @@ sourcefiles = ['_pglasso.pyx', '_pglasso.c', 'dpshift.pyx', '__init__.py']
 
 setup(
     name = "pglasso",
-    version = "1.0.1",
+    version = "1.0.2",
     author='Maxim Grechkin',
     author_email='grechkin@cs.washington.edu',
-    url="https://sites.google.com/a/cs.washington.edu/pathglasso/",
+    url="http://pathglasso-leelab.cs.washington.edu",
     packages=['pglasso'],
     scripts=["pglasso/__init__.py"],
-    description='Pathway Graphical Lasso implementation',
+    description="Pathway Graphical Lasso implementation",
+    license="MIT",
     ext_modules = cythonize( Extension("_pglasso", ["_pglasso.pyx"], include_dirs=[np.get_include()])),
     install_requires=[
         "cython >= 0.20.1",

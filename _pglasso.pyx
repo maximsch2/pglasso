@@ -905,6 +905,7 @@ def cpglasso_DC(S, pathways, lmbda, tol=1e-4, maxIter=50, debug=False, Theta=Non
     j = 1
     components = nx.connected_components(tree)
     for component in components:
+        component = list(component) # convert set to list for NetworkX > 1.10
         j += 1
         source = random.choice(component)
         for i in xrange(maxIter):
