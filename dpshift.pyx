@@ -1,4 +1,4 @@
-from libc.math cimport fabs, fmax, fmin
+from libc.math cimport fabs
 import numpy as np
 cimport numpy as np
 cimport cython
@@ -10,6 +10,12 @@ cimport cython
 cdef inline double new_cy_fsign(double x, double y) nogil:
     return fabs(x) if y >= 0 else -fabs(x)
 
+@cython.profile(False)
+cdef inline double fmin(double x, double y) nogil:
+    if x > y:
+        return y
+    else:
+        return x
 
 @cython.profile(False)
 cdef inline double new_compute_obj3(double[:] grad, double[:, :] u, double[:, :] b, double[:, :] shift, double w22, int cur_index) nogil:
